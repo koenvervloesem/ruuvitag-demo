@@ -1,9 +1,9 @@
 mqtt:
-  host: localhost 
+  host: localhost
   port: 1883
   topic_prefix: bt-mqtt-gateway
   client_id: bt-mqtt-gateway
-  availability_topic: availability 
+  availability_topic: availability
 
 manager:
   command_timeout: 30
