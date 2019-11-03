@@ -2,7 +2,7 @@
 
 This is a demo of reading Bluetooth Low Energy sensor measurements of RuuviTag environmental sensors and feeding them to MQTT, a database and dashboards.
 
-This project is not affiliated to the Ruuvi company in any way.
+This project is not affiliated to the [Ruuvi](https://ruuvi.com/) company in any way.
 
 ## System requirements
 This demo has been tested on a Raspberry Pi 3B with Raspbian Buster Lite. All instructions assume this configuration. It should run on other Linux systems with minor adjustments, though.
@@ -39,6 +39,20 @@ hciconfig
 
 This should show a device **hci0** as **UP RUNNING**.
 
+## Installation
+Clone the repository and enter the directory:
+
+```shell
+git clone https://github.com/koenvervloesem/ruuvitag-demo.git
+cd ruuvitag-demo
+```
+
+Change the owner of the `grafana` directory:
+
+```shell
+sudo chown -R 472:472 grafana
+```
+
 ## Configuration
 Add the MAC addresses of your RuuviTag sensors to the `bt-mqtt-gateway/config.yaml` file. You can find these by scanning for Bluetooth Low Energy devices in your neighborhood:
 
@@ -68,9 +82,9 @@ This starts six Docker containers:
 
 You have access to:
 
-  * The Node-RED flow on http://IP:1880
-  * The Node-RED dashboard on http://IP:1880/ui
-  * The Grafana dashboard on http://IP:3000
+  * The Node-RED flow on http://localhost:1880
+  * The Node-RED dashboard on http://localhost:1880/ui
+  * The Grafana dashboard on http://localhost:3000
 
 Grafana asks you to log in. Use **admin** both as the username and the password. After this, you're asked to choose another password.
 
