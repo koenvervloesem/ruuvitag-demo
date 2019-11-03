@@ -1,0 +1,74 @@
+version: '3.7'
+
+services:
+  mosquitto:
+    image: eclipse-mosquitto
+    container_name: mosquitto
+    restart: always
+    volumes:
+      - ./mosquitto:/mosquitto
+    ports:
+      - "1883:1883"
+      - "9001:9001"
+  bt-mqtt-gateway:
+    # Use this image as long as the RuuviTag PR hasn't been merged:
+    # https://github.com/zewelor/bt-mqtt-gateway/pull/112
+    image: koenvervloesem/bt-mqtt-gateway
+    container_name: bt-mqtt-gateway
+    restart: always
+    volumes:
+      - ./bt-mqtt-gateway:/config
+    # These capabilities are needed for Bluetooth
+    cap_add:
+      - NET_ADMIN
+      - SYS_ADMIN
+    # The Docker host should have working Bluetooth
+    network_mode: host
+    depends_on:
+      - mosquitto
+  node-red:
+    image: nodered/node-red
+    container_name: node-red
+    restart: always
+    volumes:
+      - ./node-red:/data
+    ports:
+      - "1880:1880"
+    environment:
+      - TZ=Europe/Brussels
+    # Install node-red-dashboard before starting Node-RED
+    entrypoint: /bin/bash
+    command: ["-c", "npm install node-red-dashboard && npm start -- --userDir /data"]
+    depends_on:
+      - mosquitto
+  telegraf:
+    image: telegraf
+    container_name: telegraf
+    restart: always
+    volumes:
+      - ./telegraf:/etc/telegraf
+    depends_on:
+      - influxdb
+      - mosquitto
+  influxdb:
+    image: influxdb
+    container_name: influxdb
+    restart: always
+    volumes:
+      - ./influxdb/var:/var/lib/influxdb
+    ports:
+      - "8086:8086"
+  grafana:
+    # Use :master until Grafana 6.5 is released because it has a fix for ARM
+    # See https://github.com/grafana/grafana/issues/19585
+    image: grafana/grafana:master
+    container_name: grafana
+    restart: always
+    volumes:
+      - ./grafana/var:/var/lib/grafana
+      - ./grafana/provisioning:/etc/grafana/provisioning
+    ports:
+      - "3000:3000"
+    user: "472"
+    depends_on:
+      - influxdb
