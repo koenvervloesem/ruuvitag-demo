@@ -83,7 +83,7 @@ This starts six Docker containers:
   * [Node-RED](https://nodered.org/): Subscribes to the MQTT messages from Mosquitto and shows the values in a dashboard.
   * [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/): Collects MQTT messages from Mosquitto and sends the values to InfluxDB.
   * [InfluxDB](https://www.influxdata.com/): Stores all the values of the RuuviTag measurements in a time-series database.
-  * [Grafana](https://grafana.com/): Show the values of the InfluxDB database in a dashboard.
+  * [Grafana](https://grafana.com/): Shows the values of the InfluxDB database in a dashboard.
 
 You have access to:
 
