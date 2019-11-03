@@ -76,10 +76,11 @@ Starting the demo is easy, as it's using Docker Compose:
 docker-compose up -d
 ```
 
-This starts six Docker containers:
+This starts seven Docker containers:
 
   * [bt-mqtt-gateway](https://github.com/zewelor/bt-mqtt-gateway): Reads RuuviTag sensor measurements using Bluetooth Low Energy and forwards them to a MQTT broker.
   * [Mosquitto](https://mosquitto.org/): Receives the MQTT messages from bt-mqtt-gateway and relays them to anyone who is interested.
+  * [HiveMQ MQTT Web Client](https://github.com/hivemq/hivemq-mqtt-web-client): Connects to Mosquitto and shows you the MQTT messages in your web browser using WebSockets.
   * [Node-RED](https://nodered.org/): Subscribes to the MQTT messages from Mosquitto and shows the values in a dashboard.
   * [Telegraf](https://www.influxdata.com/time-series-platform/telegraf/): Collects MQTT messages from Mosquitto and sends the values to InfluxDB.
   * [InfluxDB](https://www.influxdata.com/): Stores all the values of the RuuviTag measurements in a time-series database.
@@ -87,6 +88,7 @@ This starts six Docker containers:
 
 You have access to:
 
+  * The MQTT web client on http://localhost:8080
   * The Node-RED flow on http://localhost:1880
   * The Node-RED dashboard on http://localhost:1880/ui
   * The Grafana dashboard on http://localhost:3000

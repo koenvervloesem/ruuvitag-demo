@@ -10,6 +10,16 @@ services:
     ports:
       - "1883:1883"
       - "9001:9001"
+  hivemq-mqtt-web-client:
+    image: koenvervloesem/hivemq-mqtt-web-client
+    container_name: hivemq-mqtt-web-client
+    restart: always
+    volumes:
+      - ./hivemq-mqtt-web-client/config.js:/var/www/html/config.js
+    ports:
+      - "8080:80"
+    depends_on:
+      - mosquitto
   bt-mqtt-gateway:
     # Use this image as long as the RuuviTag PR hasn't been merged:
     # https://github.com/zewelor/bt-mqtt-gateway/pull/112
