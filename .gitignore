@@ -4,5 +4,7 @@ grafana/var/png
 influxdb/
 node-red/.config.json
 node-red/.config.json.backup
+node-red/.flows.json.backup
+node-red/flows_cred.json
 node-red/package.json
 node-red/settings.js
