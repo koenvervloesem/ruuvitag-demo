@@ -21,9 +21,7 @@ services:
     depends_on:
       - mosquitto
   bt-mqtt-gateway:
-    # Use this image as long as the RuuviTag PR hasn't been merged:
-    # https://github.com/zewelor/bt-mqtt-gateway/pull/112
-    image: koenvervloesem/bt-mqtt-gateway
+    image: zewelor/bt-mqtt-gateway
     container_name: bt-mqtt-gateway
     restart: always
     volumes:
