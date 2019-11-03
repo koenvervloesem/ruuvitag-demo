@@ -5,7 +5,12 @@ This is a demo of reading Bluetooth Low Energy sensor measurements of RuuviTag e
 This project is not affiliated to the [Ruuvi](https://ruuvi.com/) company in any way.
 
 ## System requirements
-This demo has been tested on a Raspberry Pi 3B with Raspbian Buster Lite. All instructions assume this configuration. It should run on other Linux systems with minor adjustments, though.
+This demo has been tested on:
+
+  * Raspbian Buster Lite (on a Raspberry Pi 3B)
+  * Ubuntu Desktop 19.10
+
+All instructions assume the first configuration. It should run on other Linux systems with minor adjustments, though.
 
 The demo uses Docker, so install it:
 
@@ -19,7 +24,7 @@ And give the `pi` user access to Docker:
 sudo usermod pi -aG docker
 ```
 
-The install Python's pip package manager:
+Then install Python's pip package manager:
 
 ```shell
 sudo apt install python3-pip
@@ -60,7 +65,7 @@ Add the MAC addresses of your RuuviTag sensors to the `bt-mqtt-gateway/config.ya
 sudo hcitool lescan
 ```
 
-Or you can run the RuuviStation app on a Android or iOS device and have a look at the MAC address in the tag settings of each RuuviTag.
+Or you can run the Ruuvi Station app [on Android](https://github.com/ruuvi/com.ruuvi.station) or [on iOS](https://github.com/ruuvi/com.ruuvi.station.ios) and have a look at the MAC address in the tag settings of each RuuviTag.
 
 The Node-RED flow and Grafana dashboard suppose that you have three tags, called `tag1`, `tag2` and `tag3`. So I suggest that initially you leave these names in `bt-mqtt-gateway/config.yaml`. After starting up the demo, you can always change the configuration.
 
@@ -95,7 +100,7 @@ docker-compose down
 ```
 
 ## Security
-This is purely a demo of how you can process RuuviTag sensor measurements, so there's no security. Only use this for evaluation purposes.
+This is purely a demo of how you can process RuuviTag sensor measurements, so there's no security such as encryption and authentication. Only use this demo for evaluation purposes.
 
 ## License
 This library is provided by [Koen Vervloesem](mailto:koen@vervloesem.eu) as open source software with the MIT license. See the LICENSE file for more information.
