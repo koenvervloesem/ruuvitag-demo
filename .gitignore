@@ -1,0 +1,8 @@
+grafana/var/grafana.db
+grafana/var/plugins
+grafana/var/png
+influxdb/
+node-red/.config.json
+node-red/.config.json.backup
+node-red/package.json
+node-red/settings.js
