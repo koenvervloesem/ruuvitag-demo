@@ -65,7 +65,7 @@ services:
     container_name: grafana
     restart: always
     volumes:
-      - ./grafana/var:/var/lib/grafana
+      - ./grafana/dashboards:/var/lib/grafana/dashboards
       - ./grafana/provisioning:/etc/grafana/provisioning
     ports:
       - "3000:3000"
