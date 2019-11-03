@@ -15,7 +15,6 @@
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": 1,
   "links": [],
   "panels": [
     {
@@ -208,7 +207,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "celsius",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -246,6 +245,7 @@
             "mean"
           ],
           "defaults": {
+            "decimals": 1,
             "mappings": [
               {
                 "id": 0,
@@ -268,7 +268,7 @@
                 "value": 80
               }
             ],
-            "unit": "none"
+            "unit": "celsius"
           },
           "override": {},
           "values": false
@@ -342,6 +342,7 @@
             "mean"
           ],
           "defaults": {
+            "decimals": 1,
             "mappings": [],
             "max": 85,
             "min": -40,
@@ -354,7 +355,8 @@
                 "color": "red",
                 "value": 80
               }
-            ]
+            ],
+            "unit": "celsius"
           },
           "override": {},
           "values": false
@@ -428,6 +430,7 @@
             "mean"
           ],
           "defaults": {
+            "decimals": 1,
             "mappings": [],
             "max": 85,
             "min": -40,
@@ -440,7 +443,8 @@
                 "color": "red",
                 "value": 80
               }
-            ]
+            ],
+            "unit": "celsius"
           },
           "override": {},
           "values": false
@@ -689,7 +693,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "humidity",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -739,5 +743,5 @@
   "timezone": "",
   "title": "RuuviTag Dashboard",
   "uid": "jcHKTQggz",
-  "version": 16
+  "version": 1
 }
