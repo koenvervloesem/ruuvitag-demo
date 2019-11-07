@@ -5,6 +5,8 @@ This is a demo of reading Bluetooth Low Energy sensor measurements of RuuviTag e
 This project is not affiliated to the [Ruuvi](https://ruuvi.com/) company in any way.
 
 ## System requirements
+You need a Linux system with Bluetooth Low Energy (BLE) adapter, so at least Bluetooth 4.0.
+
 This demo has been tested on:
 
   * Raspbian Buster Lite (on a Raspberry Pi 3B)
