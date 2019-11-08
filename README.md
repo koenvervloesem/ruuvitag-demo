@@ -51,7 +51,7 @@ sudo pip3 install docker-compose
 ```
 
 ## Installation
-Clone the repository and enter the directory:
+Clone the repository (you may have to `sudo apt install git` first) and enter the directory:
 
 ```shell
 git clone https://github.com/koenvervloesem/ruuvitag-demo.git
