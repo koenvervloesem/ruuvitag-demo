@@ -32,11 +32,13 @@ Docker can be installed with:
 curl -sSL https://get.docker.com | sh
 ```
 
-And give the `pi` user access to Docker:
+And give the `pi` user access to Docker by adding it to the `docker` group:
 
 ```shell
 sudo usermod pi -aG docker
 ```
+
+Log out and then log in again, so the group permissions are applied to your session.
 
 Then install Python's pip package manager:
 
