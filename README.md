@@ -7,6 +7,8 @@ This project is not affiliated to the [Ruuvi](https://ruuvi.com/) company in any
 ## System requirements
 You need a Linux system with Bluetooth Low Energy (BLE) adapter, so at least Bluetooth 4.0.
 
+The demo uses Docker, so it has to be installed.
+
 This demo has been tested on:
 
   * Raspbian Buster Lite (on a Raspberry Pi 3B)
@@ -14,7 +16,17 @@ This demo has been tested on:
 
 All instructions assume the first configuration. It should run on other Linux systems with minor adjustments, though.
 
-The demo uses Docker, so install it:
+### Checking your Bluetooth adapter
+Your system should have a Bluetooth Low Energy adapter, as is available in all recent Raspberry Pi models. You can verify this with:
+
+```shell
+hciconfig -a
+```
+
+This should show a device **hci0** as **UP RUNNING** and the **LMP Version** should be higher dan 4.0.
+
+### Installing Docker and Docker Compose
+Docker can be installed with:
 
 ```shel
 curl -sSL https://get.docker.com | sh
@@ -37,14 +49,6 @@ And install Docker Compose:
 ```shell
 sudo pip3 install docker-compose
 ```
-
-Your system should have a Bluetooth Low Energy adapter, as is available in all recent Raspberry Pi models. You can verify this with:
-
-```shell
-hciconfig
-```
-
-This should show a device **hci0** as **UP RUNNING**.
 
 ## Installation
 Clone the repository and enter the directory:
