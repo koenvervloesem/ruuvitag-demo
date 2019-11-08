@@ -23,7 +23,7 @@ Your system should have a Bluetooth Low Energy adapter, as is available in all r
 hciconfig -a
 ```
 
-This should show a device **hci0** as **UP RUNNING** and the **LMP Version** should be higher dan 4.0.
+This should show a device **hci0** as **UP RUNNING** and the **LMP Version** should be at least 4.0.
 
 ### Installing Docker and Docker Compose
 Docker can be installed with:
