@@ -229,380 +229,6 @@
       }
     },
     {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 5,
-        "w": 3,
-        "x": 12,
-        "y": 0
-      },
-      "id": 6,
-      "links": [],
-      "options": {
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "decimals": 1,
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              }
-            ],
-            "max": 85,
-            "min": -40,
-            "nullValueMode": "connected",
-            "thresholds": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ],
-            "unit": "celsius"
-          },
-          "override": {},
-          "values": false
-        },
-        "orientation": "horizontal",
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "pluginVersion": "6.5.0-pre",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "ruuvitag",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "topic",
-              "operator": "=",
-              "value": "bt-mqtt-gateway/ruuvitag/tag1/temperature"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Temperature 1",
-      "type": "gauge"
-    },
-    {
-      "datasource": null,
-      "gridPos": {
-        "h": 5,
-        "w": 3,
-        "x": 15,
-        "y": 0
-      },
-      "id": 8,
-      "options": {
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "decimals": 1,
-            "mappings": [],
-            "max": 85,
-            "min": -40,
-            "thresholds": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ],
-            "unit": "celsius"
-          },
-          "override": {},
-          "values": false
-        },
-        "orientation": "auto",
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "pluginVersion": "6.5.0-pre",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "ruuvitag",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "topic",
-              "operator": "=",
-              "value": "bt-mqtt-gateway/ruuvitag/tag2/temperature"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Temperature 2",
-      "type": "gauge"
-    },
-    {
-      "datasource": null,
-      "gridPos": {
-        "h": 5,
-        "w": 3,
-        "x": 18,
-        "y": 0
-      },
-      "id": 10,
-      "options": {
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "decimals": 1,
-            "mappings": [],
-            "max": 85,
-            "min": -40,
-            "thresholds": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ],
-            "unit": "celsius"
-          },
-          "override": {},
-          "values": false
-        },
-        "orientation": "auto",
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "pluginVersion": "6.5.0-pre",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "ruuvitag",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "topic",
-              "operator": "=",
-              "value": "bt-mqtt-gateway/ruuvitag/tag3/temperature"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Temperature 3",
-      "type": "gauge"
-    },
-    {
-      "cacheTimeout": null,
-      "datasource": null,
-      "gridPos": {
-        "h": 5,
-        "w": 3,
-        "x": 21,
-        "y": 0
-      },
-      "id": 11,
-      "links": [],
-      "options": {
-        "fieldOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "defaults": {
-            "decimals": 1,
-            "mappings": [
-              {
-                "id": 0,
-                "op": "=",
-                "text": "N/A",
-                "type": 1,
-                "value": "null"
-              }
-            ],
-            "max": 85,
-            "min": -40,
-            "nullValueMode": "connected",
-            "thresholds": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
-              }
-            ],
-            "unit": "celsius"
-          },
-          "override": {},
-          "values": false
-        },
-        "orientation": "horizontal",
-        "showThresholdLabels": false,
-        "showThresholdMarkers": true
-      },
-      "pluginVersion": "6.5.0-pre",
-      "targets": [
-        {
-          "groupBy": [
-            {
-              "params": [
-                "$__interval"
-              ],
-              "type": "time"
-            },
-            {
-              "params": [
-                "null"
-              ],
-              "type": "fill"
-            }
-          ],
-          "measurement": "ruuvitag",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "mean"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "topic",
-              "operator": "=",
-              "value": "bt-mqtt-gateway/ruuvitag/tag4/temperature"
-            }
-          ]
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "Temperature 4",
-      "type": "gauge"
-    },
-    {
       "aliasColors": {},
       "bars": false,
       "dashLength": 10,
@@ -613,8 +239,8 @@
       "gridPos": {
         "h": 8,
         "w": 12,
-        "x": 0,
-        "y": 8
+        "x": 12,
+        "y": 0
       },
       "hiddenSeries": false,
       "id": 4,
@@ -812,6 +438,998 @@
         "align": false,
         "alignLevel": null
       }
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 0,
+        "y": 8
+      },
+      "id": 6,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              }
+            ],
+            "max": 85,
+            "min": -40,
+            "nullValueMode": "connected",
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
+            "unit": "celsius"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.5.0-pre",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag1/temperature"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Temperature 1",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 3,
+        "y": 8
+      },
+      "id": 8,
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [],
+            "max": 85,
+            "min": -40,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
+            "unit": "celsius"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.5.0-pre",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag2/temperature"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Temperature 2",
+      "type": "gauge"
+    },
+    {
+      "datasource": null,
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 6,
+        "y": 8
+      },
+      "id": 10,
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [],
+            "max": 85,
+            "min": -40,
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
+            "unit": "celsius"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "auto",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.5.0-pre",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag3/temperature"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Temperature 3",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 9,
+        "y": 8
+      },
+      "id": 11,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              }
+            ],
+            "max": 85,
+            "min": -40,
+            "nullValueMode": "connected",
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
+            "unit": "celsius"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.5.0-pre",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag4/temperature"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Temperature 4",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 12,
+        "y": 8
+      },
+      "id": 12,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              }
+            ],
+            "max": 100,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
+            "unit": "humidity"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.5.0-pre",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag1/humidity"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Humidity 1",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 15,
+        "y": 8
+      },
+      "id": 13,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              }
+            ],
+            "max": 100,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
+            "unit": "humidity"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.5.0-pre",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag2/humidity"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Humidity 2",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 18,
+        "y": 8
+      },
+      "id": 14,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              }
+            ],
+            "max": 100,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
+            "unit": "humidity"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.5.0-pre",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag3/humidity"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Humidity 3",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 5,
+        "w": 3,
+        "x": 21,
+        "y": 8
+      },
+      "id": 15,
+      "links": [],
+      "options": {
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "decimals": 1,
+            "mappings": [
+              {
+                "id": 0,
+                "op": "=",
+                "text": "N/A",
+                "type": 1,
+                "value": "null"
+              }
+            ],
+            "max": 100,
+            "min": 0,
+            "nullValueMode": "connected",
+            "thresholds": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ],
+            "unit": "humidity"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal",
+        "showThresholdLabels": false,
+        "showThresholdMarkers": true
+      },
+      "pluginVersion": "6.5.0-pre",
+      "targets": [
+        {
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag4/humidity"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Humidity 4",
+      "type": "gauge"
+    },
+    {
+      "cacheTimeout": null,
+      "datasource": null,
+      "gridPos": {
+        "h": 8,
+        "w": 12,
+        "x": 0,
+        "y": 13
+      },
+      "id": 17,
+      "links": [],
+      "options": {
+        "displayMode": "lcd",
+        "fieldOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "defaults": {
+            "mappings": [],
+            "max": 3000,
+            "min": 0,
+            "thresholds": [
+              {
+                "color": "red",
+                "value": null
+              },
+              {
+                "color": "#EAB839",
+                "value": 2000
+              },
+              {
+                "color": "green",
+                "value": 2500
+              }
+            ],
+            "unit": "mvolt"
+          },
+          "override": {},
+          "values": false
+        },
+        "orientation": "horizontal"
+      },
+      "pluginVersion": "6.5.0-pre",
+      "targets": [
+        {
+          "alias": "RuuviTag 1",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag1/battery"
+            }
+          ]
+        },
+        {
+          "alias": "RuuviTag 2",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "B",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag2/battery"
+            }
+          ]
+        },
+        {
+          "alias": "RuuviTag 3",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "C",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag3/battery"
+            }
+          ]
+        },
+        {
+          "alias": "RuuviTag 4",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag4/battery"
+            }
+          ]
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Battery",
+      "type": "bargauge"
     }
   ],
   "refresh": false,
