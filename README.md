@@ -101,16 +101,20 @@ You have access to:
   * The Node-RED dashboard on http://localhost:1880/ui
   * The Grafana dashboard on http://localhost:3000
 
-Grafana asks you to log in. Use **admin** both as the username and the password. After this, you're asked to choose another password.
+## Security
+This is purely a demo of how you can process RuuviTag sensor measurements, so there are no special security measures such as encryption, and minimal authentication and user permissions. Only use this demo for evaluation purposes.
 
+The following default passwords are configured after installation:
+
+  * Node-RED dashboard: username **admin** and password **password**. To change this, run `docker exec -ti node-red /usr/local/bin/node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" your-password-here` with your new password instead of `your-password-here` and paste the output string in the line `password: "$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",` after the line `username: "admin",` in the file `node-red/settings.js`. After this, restart Node-RED with `docker-compose restart node-red`.
+  * Grafana: username **admin** and password **admin**. After the first login, you're asked to choose another password.
+
+## Stopping the demo
 If you want to stop the demo, just run:
 
 ```shell
 docker-compose down
 ```
-
-## Security
-This is purely a demo of how you can process RuuviTag sensor measurements, so there's no security such as encryption and authentication. Only use this demo for evaluation purposes.
 
 ## License
 This library is provided by [Koen Vervloesem](mailto:koen@vervloesem.eu) as open source software with the MIT license. See the LICENSE file for more information.
