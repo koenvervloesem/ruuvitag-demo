@@ -1,1 +1,1024 @@
-[{"id":"eaed8fa5.46ccc8","type":"tab","label":"Flow 1","disabled":false,"info":""},{"id":"d1ce6ba9.c90f2","type":"mqtt-broker","z":"","name":"mosquitto","broker":"mosquitto","port":"1883","clientid":"node-red","usetls":false,"compatmode":false,"keepalive":"60","cleansession":true,"birthTopic":"","birthQos":"0","birthPayload":"","closeTopic":"","closeQos":"0","closePayload":"","willTopic":"","willQos":"0","willPayload":""},{"id":"58b18a79.6e4324","type":"ui_tab","z":"","name":"RuuviTag demo","icon":"dashboard","disabled":false,"hidden":false},{"id":"4f008f1d.e39768","type":"ui_group","z":"","name":"RuuviTag 1","tab":"58b18a79.6e4324","disp":true,"width":"6","collapse":false},{"id":"2b14eefe.3ed422","type":"ui_base","theme":{"name":"theme-light","lightTheme":{"default":"#0094CE","baseColor":"#0094CE","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":true,"reset":false},"darkTheme":{"default":"#097479","baseColor":"#097479","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif","edited":false},"customTheme":{"name":"Untitled Theme 1","default":"#4B7930","baseColor":"#4B7930","baseFont":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"},"themeState":{"base-color":{"default":"#0094CE","value":"#0094CE","edited":false},"page-titlebar-backgroundColor":{"value":"#0094CE","edited":false},"page-backgroundColor":{"value":"#fafafa","edited":false},"page-sidebar-backgroundColor":{"value":"#ffffff","edited":false},"group-textColor":{"value":"#1bbfff","edited":false},"group-borderColor":{"value":"#ffffff","edited":false},"group-backgroundColor":{"value":"#ffffff","edited":false},"widget-textColor":{"value":"#111111","edited":false},"widget-backgroundColor":{"value":"#0094ce","edited":false},"widget-borderColor":{"value":"#ffffff","edited":false},"base-font":{"value":"-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"}},"angularTheme":{"primary":"indigo","accents":"blue","warn":"red","background":"grey"}},"site":{"name":"Node-RED Dashboard","hideToolbar":"false","allowSwipe":"false","lockMenu":"false","allowTempTheme":"true","dateFormat":"DD/MM/YYYY","sizes":{"sx":48,"sy":48,"gx":6,"gy":6,"cx":6,"cy":6,"px":0,"py":0}}},{"id":"7e2d42c6.4b1d84","type":"ui_group","z":"","name":"RuuviTag 2","tab":"58b18a79.6e4324","disp":true,"width":"6","collapse":false},{"id":"c13387c.ae43bf8","type":"ui_group","z":"","name":"RuuviTag 3","tab":"58b18a79.6e4324","disp":true,"width":"6","collapse":false},{"id":"f1499505.163d08","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag1/temperature","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":350,"y":40,"wires":[["3ed4e927.0d7556"]]},{"id":"3ed4e927.0d7556","type":"ui_gauge","z":"eaed8fa5.46ccc8","name":"RuuviTag 1 temperature","group":"4f008f1d.e39768","order":0,"width":0,"height":0,"gtype":"gage","title":"Temperature","label":"°C","format":"{{value}}","min":"-40","max":"85","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":910,"y":40,"wires":[]},{"id":"e95f5697.571e","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag2/temperature","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":350,"y":440,"wires":[["863e1b87.45c8c"]]},{"id":"863e1b87.45c8c","type":"ui_gauge","z":"eaed8fa5.46ccc8","name":"RuuviTag 2 temperature","group":"7e2d42c6.4b1d84","order":0,"width":0,"height":0,"gtype":"gage","title":"Temperature","label":"°C","format":"{{value}}","min":"-40","max":"85","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":930,"y":440,"wires":[]},{"id":"c1d1a418.33d548","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag3/temperature","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":350,"y":880,"wires":[["c86ed7a7.4c4cc8"]]},{"id":"c86ed7a7.4c4cc8","type":"ui_gauge","z":"eaed8fa5.46ccc8","name":"RuuviTag 3 temperature","group":"c13387c.ae43bf8","order":0,"width":0,"height":0,"gtype":"gage","title":"Temperature","label":"°C","format":"{{value}}","min":"-40","max":"85","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":930,"y":880,"wires":[]},{"id":"f47cc3f8.8913b","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag1/humidity","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":330,"y":100,"wires":[["5c188f09.7ed5b8"]]},{"id":"5c188f09.7ed5b8","type":"ui_gauge","z":"eaed8fa5.46ccc8","name":"RuuviTag 1 humidity","group":"4f008f1d.e39768","order":0,"width":0,"height":0,"gtype":"gage","title":"Humidity","label":"%","format":"{{value}}","min":0,"max":"100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":900,"y":100,"wires":[]},{"id":"ffc8e29a.853b78","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag2/humidity","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":330,"y":497,"wires":[["9ccc8cf6.004788"]]},{"id":"9ccc8cf6.004788","type":"ui_gauge","z":"eaed8fa5.46ccc8","name":"RuuviTag 2 humidity","group":"7e2d42c6.4b1d84","order":0,"width":0,"height":0,"gtype":"gage","title":"Humidity","label":"%","format":"{{value}}","min":0,"max":"100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":920,"y":500,"wires":[]},{"id":"3ef2487b.065738","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag3/humidity","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":330,"y":940,"wires":[["a5468b5a.6e6cd8"]]},{"id":"a5468b5a.6e6cd8","type":"ui_gauge","z":"eaed8fa5.46ccc8","name":"RuuviTag 3 humidity","group":"c13387c.ae43bf8","order":0,"width":0,"height":0,"gtype":"gage","title":"Humidity","label":"%","format":"{{value}}","min":0,"max":"100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":920,"y":940,"wires":[]},{"id":"d75e46c0.9b16","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag1/acceleration_z","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":350,"y":280,"wires":[["b6dfc13d.c02ce"]]},{"id":"b6dfc13d.c02ce","type":"switch","z":"eaed8fa5.46ccc8","name":"","property":"payload","propertyType":"msg","rules":[{"t":"gt","v":"50","vt":"num"},{"t":"lt","v":"-50","vt":"num"},{"t":"btwn","v":"-50","vt":"num","v2":"50","v2t":"num"}],"checkall":"true","repair":false,"outputs":3,"x":670,"y":280,"wires":[["a2d62a5b.33809"],["30946de0.a6ddc2"],["3cbc8c7f.56a264"]]},{"id":"a2d62a5b.33809","type":"change","z":"eaed8fa5.46ccc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"Right side up","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":220,"wires":[["d98a3ee6.b96258"]]},{"id":"30946de0.a6ddc2","type":"change","z":"eaed8fa5.46ccc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"Upside down","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":280,"wires":[["d98a3ee6.b96258"]]},{"id":"3cbc8c7f.56a264","type":"change","z":"eaed8fa5.46ccc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"On its side","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":340,"wires":[["d98a3ee6.b96258"]]},{"id":"d98a3ee6.b96258","type":"ui_text","z":"eaed8fa5.46ccc8","group":"4f008f1d.e39768","order":2,"width":0,"height":0,"name":"","label":"Orientation","format":"{{msg.payload}}","layout":"row-spread","x":1220,"y":280,"wires":[]},{"id":"2d4ac8e9.1ad118","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag3/acceleration_z","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":350,"y":1140,"wires":[["540a5152.08973"]]},{"id":"540a5152.08973","type":"switch","z":"eaed8fa5.46ccc8","name":"","property":"payload","propertyType":"msg","rules":[{"t":"gt","v":"50","vt":"num"},{"t":"lt","v":"-50","vt":"num"},{"t":"btwn","v":"-50","vt":"num","v2":"50","v2t":"num"}],"checkall":"true","repair":false,"outputs":3,"x":670,"y":1140,"wires":[["c807a1cb.f58a98"],["659f934e.708a44"],["84b4252c.842c9"]]},{"id":"c807a1cb.f58a98","type":"change","z":"eaed8fa5.46ccc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"Right side up","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":1080,"wires":[["85e4d15e.9b3ae"]]},{"id":"659f934e.708a44","type":"change","z":"eaed8fa5.46ccc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"Upside down","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":1140,"wires":[["85e4d15e.9b3ae"]]},{"id":"84b4252c.842c9","type":"change","z":"eaed8fa5.46ccc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"On its side","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":1200,"wires":[["85e4d15e.9b3ae"]]},{"id":"85e4d15e.9b3ae","type":"ui_text","z":"eaed8fa5.46ccc8","group":"c13387c.ae43bf8","order":2,"width":0,"height":0,"name":"","label":"Orientation","format":"{{msg.payload}}","layout":"row-spread","x":1220,"y":1140,"wires":[]},{"id":"77c9b0e4.3f5b38","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag2/acceleration_z","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":350,"y":700,"wires":[["f48c70aa.d1c998"]]},{"id":"f48c70aa.d1c998","type":"switch","z":"eaed8fa5.46ccc8","name":"","property":"payload","propertyType":"msg","rules":[{"t":"gt","v":"50","vt":"num"},{"t":"lt","v":"-50","vt":"num"},{"t":"btwn","v":"-50","vt":"num","v2":"50","v2t":"num"}],"checkall":"true","repair":false,"outputs":3,"x":670,"y":700,"wires":[["ee1dbad1.0a15d"],["5d72c5a8.79d204"],["7031411.60caec"]]},{"id":"ee1dbad1.0a15d","type":"change","z":"eaed8fa5.46ccc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"Right side up","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":640,"wires":[["d7fd4e74.22752"]]},{"id":"5d72c5a8.79d204","type":"change","z":"eaed8fa5.46ccc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"Upside down","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":700,"wires":[["d7fd4e74.22752"]]},{"id":"7031411.60caec","type":"change","z":"eaed8fa5.46ccc8","name":"","rules":[{"t":"set","p":"payload","pt":"msg","to":"On its side","tot":"str"}],"action":"","property":"","from":"","to":"","reg":false,"x":930,"y":760,"wires":[["d7fd4e74.22752"]]},{"id":"d7fd4e74.22752","type":"ui_text","z":"eaed8fa5.46ccc8","group":"7e2d42c6.4b1d84","order":2,"width":0,"height":0,"name":"","label":"Orientation","format":"{{msg.payload}}","layout":"row-spread","x":1220,"y":700,"wires":[]},{"id":"ddc35c81.3d6f5","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag1/pressure","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":330,"y":160,"wires":[["83769d57.833558"]]},{"id":"83769d57.833558","type":"ui_gauge","z":"eaed8fa5.46ccc8","name":"RuuviTag 1 pressure","group":"4f008f1d.e39768","order":0,"width":0,"height":0,"gtype":"gage","title":"Pressure","label":"hPa","format":"{{value}}","min":"300","max":"1100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":900,"y":160,"wires":[]},{"id":"9aeaf7b.0047188","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag2/pressure","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":330,"y":560,"wires":[["904d0c9b.8cb66"]]},{"id":"904d0c9b.8cb66","type":"ui_gauge","z":"eaed8fa5.46ccc8","name":"RuuviTag 2 pressure","group":"7e2d42c6.4b1d84","order":0,"width":0,"height":0,"gtype":"gage","title":"Pressure","label":"hPa","format":"{{value}}","min":"300","max":"1100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":920,"y":560,"wires":[]},{"id":"6c5a860d.edc83","type":"mqtt in","z":"eaed8fa5.46ccc8","name":"","topic":"bt-mqtt-gateway/ruuvitag/tag3/pressure","qos":"2","datatype":"auto","broker":"d1ce6ba9.c90f2","x":330,"y":1020,"wires":[["af08bcda.b4f22"]]},{"id":"af08bcda.b4f22","type":"ui_gauge","z":"eaed8fa5.46ccc8","name":"RuuviTag 3 pressure","group":"c13387c.ae43bf8","order":0,"width":0,"height":0,"gtype":"gage","title":"Pressure","label":"hPa","format":"{{value}}","min":"300","max":"1100","colors":["#00b500","#e6e600","#ca3838"],"seg1":"","seg2":"","x":920,"y":1020,"wires":[]}]
+[
+    {
+        "id": "eaed8fa5.46ccc8",
+        "type": "tab",
+        "label": "Flow 1",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "d1ce6ba9.c90f2",
+        "type": "mqtt-broker",
+        "z": "",
+        "name": "mosquitto",
+        "broker": "mosquitto",
+        "port": "1883",
+        "clientid": "node-red",
+        "usetls": false,
+        "compatmode": false,
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": ""
+    },
+    {
+        "id": "58b18a79.6e4324",
+        "type": "ui_tab",
+        "z": "",
+        "name": "RuuviTag demo",
+        "icon": "dashboard",
+        "disabled": false,
+        "hidden": false
+    },
+    {
+        "id": "4f008f1d.e39768",
+        "type": "ui_group",
+        "z": "",
+        "name": "RuuviTag 1",
+        "tab": "58b18a79.6e4324",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "2b14eefe.3ed422",
+        "type": "ui_base",
+        "theme": {
+            "name": "theme-light",
+            "lightTheme": {
+                "default": "#0094CE",
+                "baseColor": "#0094CE",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": true,
+                "reset": false
+            },
+            "darkTheme": {
+                "default": "#097479",
+                "baseColor": "#097479",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif",
+                "edited": false
+            },
+            "customTheme": {
+                "name": "Untitled Theme 1",
+                "default": "#4B7930",
+                "baseColor": "#4B7930",
+                "baseFont": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+            },
+            "themeState": {
+                "base-color": {
+                    "default": "#0094CE",
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-titlebar-backgroundColor": {
+                    "value": "#0094CE",
+                    "edited": false
+                },
+                "page-backgroundColor": {
+                    "value": "#fafafa",
+                    "edited": false
+                },
+                "page-sidebar-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-textColor": {
+                    "value": "#1bbfff",
+                    "edited": false
+                },
+                "group-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "group-backgroundColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "widget-textColor": {
+                    "value": "#111111",
+                    "edited": false
+                },
+                "widget-backgroundColor": {
+                    "value": "#0094ce",
+                    "edited": false
+                },
+                "widget-borderColor": {
+                    "value": "#ffffff",
+                    "edited": false
+                },
+                "base-font": {
+                    "value": "-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen-Sans,Ubuntu,Cantarell,Helvetica Neue,sans-serif"
+                }
+            },
+            "angularTheme": {
+                "primary": "indigo",
+                "accents": "blue",
+                "warn": "red",
+                "background": "grey"
+            }
+        },
+        "site": {
+            "name": "Node-RED Dashboard",
+            "hideToolbar": "false",
+            "allowSwipe": "false",
+            "lockMenu": "false",
+            "allowTempTheme": "true",
+            "dateFormat": "DD/MM/YYYY",
+            "sizes": {
+                "sx": 48,
+                "sy": 48,
+                "gx": 6,
+                "gy": 6,
+                "cx": 6,
+                "cy": 6,
+                "px": 0,
+                "py": 0
+            }
+        }
+    },
+    {
+        "id": "7e2d42c6.4b1d84",
+        "type": "ui_group",
+        "z": "",
+        "name": "RuuviTag 2",
+        "tab": "58b18a79.6e4324",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "c13387c.ae43bf8",
+        "type": "ui_group",
+        "z": "",
+        "name": "RuuviTag 3",
+        "tab": "58b18a79.6e4324",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f1499505.163d08",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag1/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 350,
+        "y": 40,
+        "wires": [
+            [
+                "3ed4e927.0d7556"
+            ]
+        ]
+    },
+    {
+        "id": "3ed4e927.0d7556",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 1 temperature",
+        "group": "4f008f1d.e39768",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "\u00b0C",
+        "format": "{{value}}",
+        "min": "-40",
+        "max": "85",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 910,
+        "y": 40,
+        "wires": []
+    },
+    {
+        "id": "e95f5697.571e",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag2/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 350,
+        "y": 440,
+        "wires": [
+            [
+                "863e1b87.45c8c"
+            ]
+        ]
+    },
+    {
+        "id": "863e1b87.45c8c",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 2 temperature",
+        "group": "7e2d42c6.4b1d84",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "\u00b0C",
+        "format": "{{value}}",
+        "min": "-40",
+        "max": "85",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 930,
+        "y": 440,
+        "wires": []
+    },
+    {
+        "id": "c1d1a418.33d548",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag3/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 350,
+        "y": 880,
+        "wires": [
+            [
+                "c86ed7a7.4c4cc8"
+            ]
+        ]
+    },
+    {
+        "id": "c86ed7a7.4c4cc8",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 3 temperature",
+        "group": "c13387c.ae43bf8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "\u00b0C",
+        "format": "{{value}}",
+        "min": "-40",
+        "max": "85",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 930,
+        "y": 880,
+        "wires": []
+    },
+    {
+        "id": "f47cc3f8.8913b",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag1/humidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 330,
+        "y": 100,
+        "wires": [
+            [
+                "5c188f09.7ed5b8"
+            ]
+        ]
+    },
+    {
+        "id": "5c188f09.7ed5b8",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 1 humidity",
+        "group": "4f008f1d.e39768",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 900,
+        "y": 100,
+        "wires": []
+    },
+    {
+        "id": "ffc8e29a.853b78",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag2/humidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 330,
+        "y": 497,
+        "wires": [
+            [
+                "9ccc8cf6.004788"
+            ]
+        ]
+    },
+    {
+        "id": "9ccc8cf6.004788",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 2 humidity",
+        "group": "7e2d42c6.4b1d84",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 500,
+        "wires": []
+    },
+    {
+        "id": "3ef2487b.065738",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag3/humidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 330,
+        "y": 940,
+        "wires": [
+            [
+                "a5468b5a.6e6cd8"
+            ]
+        ]
+    },
+    {
+        "id": "a5468b5a.6e6cd8",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 3 humidity",
+        "group": "c13387c.ae43bf8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 940,
+        "wires": []
+    },
+    {
+        "id": "d75e46c0.9b16",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag1/acceleration_z",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 350,
+        "y": 280,
+        "wires": [
+            [
+                "b6dfc13d.c02ce"
+            ]
+        ]
+    },
+    {
+        "id": "b6dfc13d.c02ce",
+        "type": "switch",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "-50",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "-50",
+                "vt": "num",
+                "v2": "50",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 670,
+        "y": 280,
+        "wires": [
+            [
+                "a2d62a5b.33809"
+            ],
+            [
+                "30946de0.a6ddc2"
+            ],
+            [
+                "3cbc8c7f.56a264"
+            ]
+        ]
+    },
+    {
+        "id": "a2d62a5b.33809",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Right side up",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 220,
+        "wires": [
+            [
+                "d98a3ee6.b96258"
+            ]
+        ]
+    },
+    {
+        "id": "30946de0.a6ddc2",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Upside down",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 280,
+        "wires": [
+            [
+                "d98a3ee6.b96258"
+            ]
+        ]
+    },
+    {
+        "id": "3cbc8c7f.56a264",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "On its side",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 340,
+        "wires": [
+            [
+                "d98a3ee6.b96258"
+            ]
+        ]
+    },
+    {
+        "id": "d98a3ee6.b96258",
+        "type": "ui_text",
+        "z": "eaed8fa5.46ccc8",
+        "group": "4f008f1d.e39768",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Orientation",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1220,
+        "y": 280,
+        "wires": []
+    },
+    {
+        "id": "2d4ac8e9.1ad118",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag3/acceleration_z",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 350,
+        "y": 1140,
+        "wires": [
+            [
+                "540a5152.08973"
+            ]
+        ]
+    },
+    {
+        "id": "540a5152.08973",
+        "type": "switch",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "-50",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "-50",
+                "vt": "num",
+                "v2": "50",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 670,
+        "y": 1140,
+        "wires": [
+            [
+                "c807a1cb.f58a98"
+            ],
+            [
+                "659f934e.708a44"
+            ],
+            [
+                "84b4252c.842c9"
+            ]
+        ]
+    },
+    {
+        "id": "c807a1cb.f58a98",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Right side up",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 1080,
+        "wires": [
+            [
+                "85e4d15e.9b3ae"
+            ]
+        ]
+    },
+    {
+        "id": "659f934e.708a44",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Upside down",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 1140,
+        "wires": [
+            [
+                "85e4d15e.9b3ae"
+            ]
+        ]
+    },
+    {
+        "id": "84b4252c.842c9",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "On its side",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 1200,
+        "wires": [
+            [
+                "85e4d15e.9b3ae"
+            ]
+        ]
+    },
+    {
+        "id": "85e4d15e.9b3ae",
+        "type": "ui_text",
+        "z": "eaed8fa5.46ccc8",
+        "group": "c13387c.ae43bf8",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Orientation",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1220,
+        "y": 1140,
+        "wires": []
+    },
+    {
+        "id": "77c9b0e4.3f5b38",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag2/acceleration_z",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 350,
+        "y": 700,
+        "wires": [
+            [
+                "f48c70aa.d1c998"
+            ]
+        ]
+    },
+    {
+        "id": "f48c70aa.d1c998",
+        "type": "switch",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "-50",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "-50",
+                "vt": "num",
+                "v2": "50",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 670,
+        "y": 700,
+        "wires": [
+            [
+                "ee1dbad1.0a15d"
+            ],
+            [
+                "5d72c5a8.79d204"
+            ],
+            [
+                "7031411.60caec"
+            ]
+        ]
+    },
+    {
+        "id": "ee1dbad1.0a15d",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Right side up",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 640,
+        "wires": [
+            [
+                "d7fd4e74.22752"
+            ]
+        ]
+    },
+    {
+        "id": "5d72c5a8.79d204",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Upside down",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 700,
+        "wires": [
+            [
+                "d7fd4e74.22752"
+            ]
+        ]
+    },
+    {
+        "id": "7031411.60caec",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "On its side",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 760,
+        "wires": [
+            [
+                "d7fd4e74.22752"
+            ]
+        ]
+    },
+    {
+        "id": "d7fd4e74.22752",
+        "type": "ui_text",
+        "z": "eaed8fa5.46ccc8",
+        "group": "7e2d42c6.4b1d84",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Orientation",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1220,
+        "y": 700,
+        "wires": []
+    },
+    {
+        "id": "ddc35c81.3d6f5",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag1/pressure",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 330,
+        "y": 160,
+        "wires": [
+            [
+                "83769d57.833558"
+            ]
+        ]
+    },
+    {
+        "id": "83769d57.833558",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 1 pressure",
+        "group": "4f008f1d.e39768",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Pressure",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": "300",
+        "max": "1100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 900,
+        "y": 160,
+        "wires": []
+    },
+    {
+        "id": "9aeaf7b.0047188",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag2/pressure",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 330,
+        "y": 560,
+        "wires": [
+            [
+                "904d0c9b.8cb66"
+            ]
+        ]
+    },
+    {
+        "id": "904d0c9b.8cb66",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 2 pressure",
+        "group": "7e2d42c6.4b1d84",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Pressure",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": "300",
+        "max": "1100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 560,
+        "wires": []
+    },
+    {
+        "id": "6c5a860d.edc83",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag3/pressure",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 330,
+        "y": 1020,
+        "wires": [
+            [
+                "af08bcda.b4f22"
+            ]
+        ]
+    },
+    {
+        "id": "af08bcda.b4f22",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 3 pressure",
+        "group": "c13387c.ae43bf8",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Pressure",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": "300",
+        "max": "1100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 1020,
+        "wires": []
+    }
+]
