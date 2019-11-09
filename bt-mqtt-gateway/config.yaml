@@ -14,5 +14,6 @@ manager:
           tag1: F9:DA:D2:0D:62:24
           tag2: C8:03:24:74:7E:0E
           tag3: C5:98:17:63:C3:E3
+          tag4: D8:58:5E:B8:ED:DF
         topic_prefix: ruuvitag
       update_interval: 5

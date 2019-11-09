@@ -2,7 +2,7 @@
     {
         "id": "eaed8fa5.46ccc8",
         "type": "tab",
-        "label": "Flow 1",
+        "label": "RuuviTag Demo",
         "disabled": false,
         "info": ""
     },
@@ -158,6 +158,16 @@
         "type": "ui_group",
         "z": "",
         "name": "RuuviTag 3",
+        "tab": "58b18a79.6e4324",
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "30b8e062.37b95",
+        "type": "ui_group",
+        "z": "",
+        "name": "RuuviTag 4",
         "tab": "58b18a79.6e4324",
         "disp": true,
         "width": "6",
@@ -1019,6 +1029,292 @@
         "seg2": "",
         "x": 920,
         "y": 1020,
+        "wires": []
+    },
+    {
+        "id": "b51ce146.ddb3f",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag4/temperature",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 350,
+        "y": 1320,
+        "wires": [
+            [
+                "bb064d50.922058"
+            ]
+        ]
+    },
+    {
+        "id": "bb064d50.922058",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 4 temperature",
+        "group": "30b8e062.37b95",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperature",
+        "label": "\u00b0C",
+        "format": "{{value}}",
+        "min": "-40",
+        "max": "85",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 930,
+        "y": 1320,
+        "wires": []
+    },
+    {
+        "id": "e788725d.5a66a8",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag4/humidity",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 330,
+        "y": 1380,
+        "wires": [
+            [
+                "b486c770.b4c848"
+            ]
+        ]
+    },
+    {
+        "id": "b486c770.b4c848",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 4 humidity",
+        "group": "30b8e062.37b95",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humidity",
+        "label": "%",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 1380,
+        "wires": []
+    },
+    {
+        "id": "37a091af.b60cbe",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag4/acceleration_z",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 350,
+        "y": 1580,
+        "wires": [
+            [
+                "59b69629.903d6"
+            ]
+        ]
+    },
+    {
+        "id": "59b69629.903d6",
+        "type": "switch",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "property": "payload",
+        "propertyType": "msg",
+        "rules": [
+            {
+                "t": "gt",
+                "v": "50",
+                "vt": "num"
+            },
+            {
+                "t": "lt",
+                "v": "-50",
+                "vt": "num"
+            },
+            {
+                "t": "btwn",
+                "v": "-50",
+                "vt": "num",
+                "v2": "50",
+                "v2t": "num"
+            }
+        ],
+        "checkall": "true",
+        "repair": false,
+        "outputs": 3,
+        "x": 670,
+        "y": 1580,
+        "wires": [
+            [
+                "cb8a25b6.0233a"
+            ],
+            [
+                "73a39f82.39aab8"
+            ],
+            [
+                "c4599fee.99bf18"
+            ]
+        ]
+    },
+    {
+        "id": "cb8a25b6.0233a",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Right side up",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 1520,
+        "wires": [
+            [
+                "10ec976c.4b2d19"
+            ]
+        ]
+    },
+    {
+        "id": "73a39f82.39aab8",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "Upside down",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 1580,
+        "wires": [
+            [
+                "10ec976c.4b2d19"
+            ]
+        ]
+    },
+    {
+        "id": "c4599fee.99bf18",
+        "type": "change",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "On its side",
+                "tot": "str"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 930,
+        "y": 1640,
+        "wires": [
+            [
+                "10ec976c.4b2d19"
+            ]
+        ]
+    },
+    {
+        "id": "10ec976c.4b2d19",
+        "type": "ui_text",
+        "z": "eaed8fa5.46ccc8",
+        "group": "30b8e062.37b95",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "name": "",
+        "label": "Orientation",
+        "format": "{{msg.payload}}",
+        "layout": "row-spread",
+        "x": 1220,
+        "y": 1580,
+        "wires": []
+    },
+    {
+        "id": "78eab4ae.36b62c",
+        "type": "mqtt in",
+        "z": "eaed8fa5.46ccc8",
+        "name": "",
+        "topic": "bt-mqtt-gateway/ruuvitag/tag4/pressure",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "d1ce6ba9.c90f2",
+        "x": 330,
+        "y": 1460,
+        "wires": [
+            [
+                "13f812ff.c0fb35"
+            ]
+        ]
+    },
+    {
+        "id": "13f812ff.c0fb35",
+        "type": "ui_gauge",
+        "z": "eaed8fa5.46ccc8",
+        "name": "RuuviTag 4 pressure",
+        "group": "30b8e062.37b95",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Pressure",
+        "label": "hPa",
+        "format": "{{value}}",
+        "min": "300",
+        "max": "1100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 920,
+        "y": 1460,
         "wires": []
     }
 ]

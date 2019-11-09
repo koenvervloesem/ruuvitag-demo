@@ -185,6 +185,49 @@
               "value": "bt-mqtt-gateway/ruuvitag/tag3/temperature"
             }
           ]
+        },
+        {
+          "alias": "RuuviTag 4",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag4/temperature"
+            }
+          ]
         }
       ],
       "thresholds": [],
@@ -669,6 +712,49 @@
               "key": "topic",
               "operator": "=",
               "value": "bt-mqtt-gateway/ruuvitag/tag3/humidity"
+            }
+          ]
+        },
+        {
+          "alias": "RuuviTag 4",
+          "groupBy": [
+            {
+              "params": [
+                "$__interval"
+              ],
+              "type": "time"
+            },
+            {
+              "params": [
+                "null"
+              ],
+              "type": "fill"
+            }
+          ],
+          "measurement": "ruuvitag",
+          "orderByTime": "ASC",
+          "policy": "default",
+          "refId": "D",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "mean"
+              }
+            ]
+          ],
+          "tags": [
+            {
+              "key": "topic",
+              "operator": "=",
+              "value": "bt-mqtt-gateway/ruuvitag/tag4/humidity"
             }
           ]
         }
