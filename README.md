@@ -101,6 +101,14 @@ You have access to:
   * The Node-RED dashboard on http://localhost:1880/ui
   * The Grafana dashboard on http://localhost:3000
 
+## Extra demo: e-Paper HAT
+If you have a Waveshare 2.7 inch three-colour e-Paper HAT, you can use this demo in combination with the [RuuviTag ePaper](https://github.com/koenvervloesem/ruuvitag-epaper) project on a Raspberry Pi:
+
+  * Build the Docker container of that project.
+  * Start this container together with the containers of the RuuviTag Demo: `docker-compose up -f docker-compose-epaper.yml up -d`.
+
+This shows the temperature and humidity measurements of the four configured RuuviTag sensors on the display, as well as the date, time and IP address. The latter is a nice way to know which IP address you have to log into to access the dashboards.
+
 ## Security
 This is purely a demo of how you can process RuuviTag sensor measurements, so there are no special security measures such as encryption, and minimal authentication and user permissions. Only use this demo for evaluation purposes.
 
@@ -116,5 +124,11 @@ If you want to stop the demo, just run:
 docker-compose down
 ```
 
+If you run the extra demo with the e-Paper HAT, stop the demo like this:
+
+```shell
+docker-compose -f docker-compose-epaper.yml down
+```
+
 ## License
-This library is provided by [Koen Vervloesem](mailto:koen@vervloesem.eu) as open source software with the MIT license. See the LICENSE file for more information.
+This program is provided by [Koen Vervloesem](mailto:koen@vervloesem.eu) as open source software with the MIT license. See the LICENSE file for more information.
