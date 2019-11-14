@@ -4,6 +4,16 @@ This is a demo of reading Bluetooth Low Energy sensor measurements of RuuviTag e
 
 This project is not affiliated to the [Ruuvi](https://ruuvi.com/) company in any way.
 
+## Screenshots
+
+Grafana dashboard:
+
+![Grafana dashboard](ruuvitag-demo-grafana.png)
+
+Node-RED dashboard:
+
+![Node-RED dashboard](ruuvitag-demo-node-red.png)
+
 ## System requirements
 You need a Linux system with Bluetooth Low Energy (BLE) adapter, so at least Bluetooth 4.0.
 
