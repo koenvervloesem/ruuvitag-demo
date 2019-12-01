@@ -1,0 +1,291 @@
+digraph demo {
+    compound=true
+    node  [shape=folder style=filled fillcolor="#438dd5"
+           fontcolor=white fontsize=12 fontname="Helvetica Bold"]
+    graph [ranksep=1.5 rankdir=LR]
+    edge  [style=solid]
+
+    // RuuviTags
+    "RuuviTag 1" [shape=doublecircle fillcolor=white fontcolor=black]
+    "RuuviTag 4" [shape=doublecircle fillcolor=white fontcolor=black]
+    "RuuviTag 3" [shape=doublecircle fillcolor=white fontcolor=black]
+    "RuuviTag 2" [shape=doublecircle fillcolor=white fontcolor=black]
+
+    // First bt-mqtt-gateway receiving RuuviTag broadcasts
+    "RuuviTag 1" -> "ruuvitag-sensor1" [
+        lhead="cluster_bt-mqtt-gateway1"
+        style=dashed
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>BLE</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    "RuuviTag 2" -> "ruuvitag-sensor1" [
+        lhead="cluster_bt-mqtt-gateway1"
+        style=dashed
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>BLE</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    "RuuviTag 3" -> "ruuvitag-sensor1" [
+        lhead="cluster_bt-mqtt-gateway1"
+        style=dashed
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>BLE</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    "RuuviTag 4" -> "ruuvitag-sensor1" [
+        lhead="cluster_bt-mqtt-gateway1"
+        style=dashed
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>BLE</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    subgraph "cluster_bt-mqtt-gateway1" {
+        label="bt-mqtt-gateway"
+        style=filled
+        fillcolor="#438dd5"
+        fontcolor=white
+        "ruuvitag-sensor1" [label="ruuvitag-sensor" shape=tab fillcolor="#399ba3"]
+    }
+
+    // Second bt-mqtt-gateway receiving RuuviTag broadcasts
+    "RuuviTag 1" -> "ruuvitag-sensor2" [
+        lhead="cluster_bt-mqtt-gateway2"
+        style=dashed
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>BLE</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    "RuuviTag 2" -> "ruuvitag-sensor2" [
+        lhead="cluster_bt-mqtt-gateway2"
+        style=dashed
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>BLE</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    "RuuviTag 3" -> "ruuvitag-sensor2" [
+        lhead="cluster_bt-mqtt-gateway2"
+        style=dashed
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>BLE</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    "RuuviTag 4" -> "ruuvitag-sensor2" [
+        lhead="cluster_bt-mqtt-gateway2"
+        style=dashed
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>BLE</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    subgraph "cluster_bt-mqtt-gateway2" {
+        label="bt-mqtt-gateway"
+        style=filled
+        fillcolor="#438dd5"
+        fontcolor=white
+        "ruuvitag-sensor2" [label="ruuvitag-sensor" shape=tab fillcolor="#399ba3"]
+    }
+
+    // Mosquitto
+    "ruuvitag-sensor1" -> Mosquitto [
+        ltail="cluster_bt-mqtt-gateway1"
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>MQTT</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    "ruuvitag-sensor2" -> Mosquitto [
+        ltail="cluster_bt-mqtt-gateway2"
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>MQTT</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    Mosquitto [shape=rect]
+
+    // HiveMQT MQTT Web Client
+    Mosquitto -> hivemq_web_client [
+        lhead=cluster_hivemq
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>WebSockets</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    subgraph cluster_hivemq {
+        label="HiveMQ MQTT Web Client"
+        style=filled
+        fillcolor="#438dd5"
+        fontcolor=white
+        hivemq_web_client [label="Web client" fillcolor="#fcb338" fontcolor=black]
+    }
+
+    // ruuvitag-epaper
+    Mosquitto -> epaper [
+        lhead=cluster_epaper
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>MQTT</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    subgraph cluster_epaper{
+        label="ruuvitag-epaper"
+        style=filled
+        fillcolor="#438dd5"
+        fontcolor=white
+        "Paho MQTT" [shape=tab fillcolor="#399ba3"]
+        "epd-library-python" [shape=tab fillcolor="#399ba3"]
+        epaper [label="Waveshare e-Paper HAT" fillcolor="#fcb338" fontcolor=black]
+    }
+
+    // Node-RED
+    Mosquitto -> "Node-RED_flow" [
+        lhead="cluster_Node-RED"
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>MQTT</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    subgraph "cluster_Node-RED" {
+        label="Node-RED"
+        style=filled
+        fillcolor="#438dd5"
+        fontcolor=white
+        "Node-RED_flow" [label="Flow" fillcolor="#fcb338" fontcolor=black]
+        "Node-RED_dashboard" [label="Dashboard" fillcolor="#fcb338" fontcolor=black]
+    }
+
+    // Grafana
+    Mosquitto -> Telegraf [
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>MQTT</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    Telegraf [shape=rect]
+
+    Telegraf -> InfluxDB [
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>HTTP</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    InfluxDB [shape=rect]
+
+    InfluxDB -> Grafana_dashboard [
+        lhead=cluster_Grafana
+        labeldistance=5
+        labelangle=0
+        label=<
+            <table bgcolor="white" border="0">
+                <tr>
+                    <td>HTTP</td>
+                </tr>
+            </table>
+        >
+    ]
+
+    subgraph cluster_Grafana {
+        label="Grafana"
+        style=filled
+        fillcolor="#438dd5"
+        fontcolor=white
+        Grafana_dashboard [label="Dashboard" fillcolor="#fcb338" fontcolor=black]
+    }
+}

@@ -140,5 +140,15 @@ If you run the extra demo with the e-Paper HAT, stop the demo like this:
 docker-compose -f docker-compose-epaper.yml down
 ```
 
+## Architecture
+
+This is the architecture of the demo:
+
+![Demo architecture diagram](ruuvitag-demo-diagram.png)
+
+This diagram shows two instances of `bt-mqtt-gateway`. You can use as many as you want, installed on Raspberry Pis or other devices positioned in multiple places for the best Bluetooth coverage of all sensors.
+
+While the demo installs all components on one device, you can distribute them over various devices. For instance, bt-mqtt-gateway on various receiver devices, ruuvitag-epaper on a Raspberry Pi with the Waveshare e-Paper HAT, HiveMQ MQTT Web Client on a developer laptop, and Mosquitto, Node-RED and Telegraf/InfluxDB/Grafana on a Linux server.
+
 ## License
 This program is provided by [Koen Vervloesem](mailto:koen@vervloesem.eu) as open source software with the MIT license. See the LICENSE file for more information.
