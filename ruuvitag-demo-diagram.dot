@@ -266,7 +266,7 @@ digraph demo {
         >
     ]
 
-    InfluxDB [shape=rect]
+    InfluxDB [shape=cylinder]
 
     InfluxDB -> Grafana_dashboard [
         lhead=cluster_Grafana
