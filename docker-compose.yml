@@ -30,6 +30,7 @@ services:
     cap_add:
       - NET_ADMIN
       - SYS_ADMIN
+      - SYS_RESOURCE
     # The Docker host should have working Bluetooth
     network_mode: host
     depends_on:
