@@ -25,7 +25,7 @@ services:
     container_name: bt-mqtt-gateway
     restart: always
     volumes:
-      - ./bt-mqtt-gateway:/config
+      - ./bt-mqtt-gateway/config.yaml:/config.yaml
     # These capabilities are needed for Bluetooth
     cap_add:
       - NET_ADMIN
