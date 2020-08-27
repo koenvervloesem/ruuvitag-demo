@@ -127,6 +127,8 @@ The following default passwords are configured after installation:
   * Node-RED dashboard: username **admin** and password **password**. To change this, run `docker exec -ti node-red /usr/local/bin/node -e "console.log(require('bcryptjs').hashSync(process.argv[1], 8));" your-password-here` with your new password instead of `your-password-here` and paste the output string in the line `password: "$2a$08$zZWtXTja0fB1pzD4sHCMyOCMYz2Z6dNbM6tl8sJogENOMcxWV9DN.",` after the line `username: "admin",` in the file `node-red/settings.js`. After this, restart Node-RED with `docker-compose restart node-red`.
   * Grafana: username **admin** and password **admin**. After the first login, you're asked to choose another password.
 
+If you want to know more about securing Mosquitto and Node-RED, please consult my book [Control Your Home with Raspberry Pi: Secure, Modular, Open-Source and Self-Sufficient](https://koen.vervloesem.eu/books/control-your-home-with-raspberry-pi/) and the accompanying GitHub repository [koenvervloesem/raspberry-pi-home-automation](https://github.com/koenvervloesem/raspberry-pi-home-automation).
+
 ## Stopping the demo
 If you want to stop the demo, just run:
 
